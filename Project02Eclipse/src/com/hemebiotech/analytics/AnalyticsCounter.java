@@ -17,6 +17,7 @@ public class AnalyticsCounter {
 
 		Symptoms symptoms = new Symptoms(symptomsList);
 		Map<String, Long> symptomsMap = symptoms.regroupAndCount();
+		symptomsMap = symptoms.order(symptomsMap);
 
 		// next generate output
 		FileWriter writer = new FileWriter("result.out");
