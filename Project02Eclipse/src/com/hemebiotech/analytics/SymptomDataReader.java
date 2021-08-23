@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -28,25 +27,26 @@ public class SymptomDataReader implements ISymptomReader {
 	public List<String> GetSymptoms(String filepath) throws IOException {
 		ArrayList<String> result = new ArrayList<String>();
 
-		if (filepath != null) {
-			try {
-				BufferedReader reader = new BufferedReader(new FileReader(filepath));
+		BufferedReader reader = new BufferedReader(new FileReader(filepath));
+		try {
+			if (filepath != null) {
 				String line = reader.readLine();
 
 				while (line != null) {
 					result.add(line);
 					line = reader.readLine();
 				}
-				reader.close();
-			} catch (IOException e) {
-				e.printStackTrace();
+			} else {
+				throw new IOException("No filepath found, please give a Filepath");
 			}
-		} else {
-			throw new IOException("No filepath found, please give a Filepath");
+
+			return result;
+
+		} finally {
+			if (reader != null) {
+				reader.close();
+			}
 		}
-		// ordering alphabetically
-		Collections.sort(result);
-		return result;
 
 	}
 

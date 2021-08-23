@@ -18,6 +18,11 @@ public interface IDataUtil {
 	 */
 	Map<String, Long> regroupAndCount();
 
+	/**
+	 * 
+	 * @param collect
+	 * @return
+	 */
 	Map<String, Long> order(Map<String, Long> collect);
 
 }

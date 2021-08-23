@@ -1,6 +1,5 @@
 package com.hemebiotech.analytics;
 
-
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
@@ -22,12 +21,17 @@ public class CustomFileWriter implements IFileWriter {
 	public void writeFile(Map<String, Long> symptomsCount, String outputFileName) throws IOException {
 
 		FileWriter writer = new FileWriter(outputFileName);
-		for (Map.Entry<String, Long> entry : symptomsCount.entrySet()) {
-			writer.write(entry.getKey() + " : " + entry.getValue() + "\n");
+		try {
+			for (Map.Entry<String, Long> entry : symptomsCount.entrySet()) {
+				writer.write(entry.getKey() + " : " + entry.getValue() + "\n");
+			}
+			System.out.println("File written");
+		} finally {
+			if (writer != null) {
+				writer.close();
+			}
 		}
-		writer.close();
 
-		System.out.println("File written");
 	}
 
 	public String getOutputFileName() {

@@ -35,9 +35,6 @@ public class Symptoms implements IDataUtil {
 
 	@Override
 	public Map<String, Long> order(Map<String, Long> collect) {
-//Solution found on internet for later reference		
-//		Map<String, Long> result = collect.entrySet().stream().sorted(Map.Entry.comparingByKey()).collect(Collectors
-//				.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldValue, newValue) -> oldValue, LinkedHashMap::new));
 		ArrayList<String> keys = new ArrayList<String>(collect.keySet());
 		Collections.sort(keys);
 		Map<String, Long> map = new TreeMap<>();
