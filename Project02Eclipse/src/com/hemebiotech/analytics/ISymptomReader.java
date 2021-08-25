@@ -18,7 +18,7 @@ public interface ISymptomReader {
 	 * @return a raw listing of all Symptoms obtained from a data source, duplicates are possible/probable
 	 * @throws IOException 
 	 */
-	List<String> GetSymptoms () throws IOException;
+	List<String> getSymptoms () throws IOException;
 
 	/**
 	 * If no data is available, return an empty List
@@ -27,5 +27,5 @@ public interface ISymptomReader {
 	 * @return a raw listing of all Symptoms obtained from a data source, duplicates are possible/probable
 	 * @throws IOException 
 	 */
-	List<String> GetSymptoms(String filepath) throws IOException;
+	List<String> getSymptoms(String filepath) throws IOException;
 }

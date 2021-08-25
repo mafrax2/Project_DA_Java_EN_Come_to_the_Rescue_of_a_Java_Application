@@ -17,7 +17,7 @@ public class AnalyticsCounter {
 	}
 
 	public static void dataTreatment(ISymptomReader reader, IFileWriter writer) throws IOException {
-		List<String> symptomsList = reader.GetSymptoms();
+		List<String> symptomsList = reader.getSymptoms();
 		Symptoms symptoms = new Symptoms(symptomsList);
 		Map<String, Long> symptomsMap = symptoms.regroupAndCount();
 		symptomsMap = symptoms.order(symptomsMap);
