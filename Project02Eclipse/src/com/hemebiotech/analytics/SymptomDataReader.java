@@ -24,7 +24,7 @@ public class SymptomDataReader implements ISymptomReader {
 	}
 
 	@Override
-	public List<String> GetSymptoms(String filepath) throws IOException {
+	public List<String> getSymptoms(String filepath) throws IOException {
 		ArrayList<String> result = new ArrayList<String>();
 
 		BufferedReader reader = new BufferedReader(new FileReader(filepath));
@@ -51,8 +51,8 @@ public class SymptomDataReader implements ISymptomReader {
 	}
 
 	@Override
-	public List<String> GetSymptoms() throws IOException {
-		return this.GetSymptoms(filepath);
+	public List<String> getSymptoms() throws IOException {
+		return this.getSymptoms(filepath);
 	}
 
 	public String getFilepath() {
