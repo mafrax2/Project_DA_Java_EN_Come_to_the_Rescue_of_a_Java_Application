@@ -23,8 +23,7 @@ public class SymptomDataReader implements ISymptomReader {
 		this.filepath = filepath;
 	}
 
-	@Override
-	public List<String> getSymptoms(String filepath) throws IOException {
+	private List<String> getSymptoms(String filepath) throws IOException {
 		ArrayList<String> result = new ArrayList<String>();
 
 		BufferedReader reader = new BufferedReader(new FileReader(filepath));

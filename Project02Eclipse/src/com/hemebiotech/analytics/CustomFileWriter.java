@@ -17,8 +17,7 @@ public class CustomFileWriter implements IFileWriter {
 		writeFile(symptomsCount, outputFileName);
 	}
 
-	@Override
-	public void writeFile(Map<String, Long> symptomsCount, String outputFileName) throws IOException {
+	private void writeFile(Map<String, Long> symptomsCount, String outputFileName) throws IOException {
 
 		FileWriter writer = new FileWriter(outputFileName);
 		try {
